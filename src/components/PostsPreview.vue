@@ -7,7 +7,7 @@
 
 <script>
 export default {
-  name: "PostPreview",
+  name: "PostsPreview",
   props: ["post"],
   filters: {
     shorten(val) {
@@ -29,8 +29,8 @@ export default {
   text-decoration: none;
   font-size: 2rem;
   color: #333;
-  text-align: center;
   display: inline-block;
+  text-align: center;
   margin-bottom: 1.5rem;
 }
 </style>
