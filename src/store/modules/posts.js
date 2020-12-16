@@ -26,16 +26,30 @@ export default {
     }
   },
   actions: {
-    getPosts: async ({commit}) => {
+    getPosts: async ({ commit }) => {
       const res = await axios.get('https://jsonplaceholder.typicode.com/posts')
       commit('SET_POSTS', res.data)
     },
-    getPostById: async ({commit}, id) => {
-      const res = await axios.get('https://jsonplaceholder.typicode.com/posts/'+ id)
+    getPostById: async ({ commit }, id) => {
+      const res = await axios.get('https://jsonplaceholder.typicode.com/posts/' + id)
       commit('GET_POST_BY_ID', res.data)
     },
-    search: ({commit},val) => {
+    search: ({ commit }, val) => {
       commit('SEARCH', val)
+    },
+    addPost: async ({ commit }, post) => {
+      await axios.post('https://jsonplaceholder.typicode.com/posts/create', {
+        title: post.title,
+        body: post.body
+      })
+        .then(res => {
+          if(res.status === 200){
+            commit('ADD_POST', res.data)
+          }
+        })
+        .catch(error => {
+          console.log(error);
+        });
     }
   },
 }
