@@ -10,7 +10,7 @@
       </div>
       <div class="header-navbar d-flex">
         <div class="nav-links">
-          <router-link to="/posts">Preview</router-link>
+          <router-link to="/posts">Posts</router-link>
           <router-link to="/addPost">Add post</router-link>
         </div>
         <div class="search d-flex">
