@@ -24,9 +24,6 @@ export default {
     SEARCH: (state, val) => {
       state.searchVal = val
     },
-    ADD_POST:(state, _post) => {
-      state.posts.push(_post)
-    }
   },
   actions: {
     getPosts: async ({ commit }) => {
@@ -40,27 +37,28 @@ export default {
     search: ({ commit }, val) => {
       commit('SEARCH', val)
     },
-    // addPost: async ({ commit }, post) => {
+    // addPost: async ({ dispatch }, post) => {
     //   await axios.post('https://jsonplaceholder.typicode.com/posts/create', {
     //     title: post.title,
     //     body: post.body
     //   })
     //     .then(res => {
     //       if(res.status === 200){
-    //         commit('ADD_POST', res.data)
+    //         dispatch('SET_POSTS', res.data)
     //       }
     //     })
     //     .catch(error => {
     //       console.log(error);
     //     });
     // }
-    addPost: ({ commit }, _post) =>{
+    addPost: ({ dispatch }, _post) =>{
       const post = {
         id: Date.now(),
         title: _post.title,
         body: _post.body
       }
-      commit('ADD_POST', post)
+      // this.store.state.posts.push(post)
+      dispatch('SET_POSTS', post)
     }
   },
 }
