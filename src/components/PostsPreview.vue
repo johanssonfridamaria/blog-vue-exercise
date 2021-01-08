@@ -22,6 +22,7 @@ export default {
   padding: 2rem 3rem;
   margin-bottom: 1rem;
   margin-top: 1rem;
+  text-align: center;
 }
 
 .title {
@@ -30,7 +31,6 @@ export default {
   font-size: 2rem;
   color: #333;
   display: inline-block;
-  text-align: center;
   margin-bottom: 1.5rem;
 }
 </style>
