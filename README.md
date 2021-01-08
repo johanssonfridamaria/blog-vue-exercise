@@ -1,24 +1,11 @@
 # blog-vue-exercise
 
-## Project setup
-```
-npm install
-```
+School project during my education @Lexicon
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## Task:
 
-### Compiles and minifies for production
-```
-npm run build
-```
+To build a blog page with posts from the api JSON placeholder. The page is built with three different routes: one page where the user can add a post. One preview page with all the posts. One page that shows one selected post. 
+The page has a search function to be able to search for a post. When the user clicks on a post it's collected from the database. The Add post function is only a simulation since it's not possible to add posts to the database. 
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Tech used: 
+VUE, VUEX, HTML, CSS, JAVASCRIPT
