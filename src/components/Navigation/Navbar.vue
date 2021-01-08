@@ -10,12 +10,17 @@
       </div>
       <div class="header-navbar d-flex">
         <div class="nav-links">
-          <router-link to="/posts">Posts</router-link>
+          <router-link to="/">Posts</router-link>
           <router-link to="/addPost">Add post</router-link>
         </div>
         <div class="search d-flex">
           <form>
-            <input type="text" placeholder="Search on blog.se" v-model="searchValue" @keyup="search(searchValue)"/>
+            <input
+              type="text"
+              placeholder="Search on blog.se"
+              v-model="searchValue"
+              @keyup="search(searchValue)"
+            />
             <button type="submit" class="btn btn-search">
               <i class="fa fa-search"></i>
             </button>
@@ -27,17 +32,17 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex';
+import { mapActions } from "vuex";
 export default {
   name: "Navbar",
-  data(){
+  data() {
     return {
-      searchValue: ''
-    }
+      searchValue: "",
+    };
   },
   methods: {
-    ...mapActions(['search'])
-  }
+    ...mapActions(["search"]),
+  },
 };
 </script>
 
@@ -67,6 +72,9 @@ p {
   padding: 2rem 3rem;
   width: 80%;
 }
+.nav-links {
+  flex-direction: row;
+}
 .nav-links a {
   text-decoration: none;
   color: #333;
@@ -79,20 +87,17 @@ p {
   text-align: center;
 }
 .header-navbar {
-  flex: row wrap;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-around;
   align-items: center;
 }
-
 a.router-link-exact-active {
   color: #666;
 }
-
 .search {
-  flex: row wrap;
-  align-items: flex-end;
+  flex-direction: row;
+  align-items: center;
 }
-
 input {
   border: none;
   font-size: 1rem;
@@ -102,9 +107,21 @@ input {
   border-bottom: 0.1rem solid #333;
   outline: none;
 }
-.btn-search{
+.btn-search {
   margin-left: 0.5rem;
   font-size: 1.2rem;
   color: #333;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    margin-bottom: 1rem;
+  }
+  .search {
+    margin-bottom: 1rem;
+  }
+  .header-navbar {
+    flex-direction: column;
+  }
 }
 </style>
