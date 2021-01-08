@@ -24,6 +24,9 @@ export default {
     SEARCH: (state, val) => {
       state.searchVal = val
     },
+    ADD_POST: (state, post) => {
+     state.posts.push(post)
+    }
   },
   actions: {
     getPosts: async ({ commit }) => {
@@ -51,14 +54,13 @@ export default {
     //       console.log(error);
     //     });
     // }
-    addPost: ({ dispatch }, _post) =>{
+    addPost: ({ commit }, _post) =>{
       const post = {
         id: Date.now(),
         title: _post.title,
         body: _post.body
       }
-      // this.store.state.posts.push(post)
-      dispatch('SET_POSTS', post)
+      commit('ADD_POST', post)
     }
   },
 }
