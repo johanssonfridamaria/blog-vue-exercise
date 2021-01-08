@@ -8,12 +8,12 @@ Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/posts',
+    path: '/',
     name: 'Posts',
     component: Posts
   },
   {
-    path: '/posts/details/:id',
+    path: '/post/:id',
     name: 'PostDetails',
     component: PostDetails,
     props:true
