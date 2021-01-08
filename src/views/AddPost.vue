@@ -36,6 +36,7 @@ export default {
         this.addPost(this.post);
         this.post.title = "";
         this.post.body = "";
+        this.$router.push('/')
       }
     },
   },
